@@ -2,12 +2,12 @@ import { app, BrowserWindow, dialog, ipcMain, screen } from "electron";
 import * as path from "path";
 import {spawn as childSpawn} from'child_process';
 
-if (handleSquirrelEvent()) {
-  return;
-}
+// if (handleSquirrelEvent()) {
+//   return;
+// }
 
 const devBuild = true;
-process.env.ELECTRON_ENABLE_LOGGING = devBuild;
+// process.env.ELECTRON_ENABLE_LOGGING = devBuild;
 
 app.on("ready", () => {
   app.setAppUserModelId('com.tormak.swtor-launcher-replacement');
