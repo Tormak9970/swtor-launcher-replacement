@@ -1,30 +1,28 @@
 <script>
-	export let name;
+	import WindowBar from './lib/WindowBar.svelte';
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<WindowBar title={'SWTOR Launcher Replacement'} minimize={true}/>
+	<div class="content">
+
+	</div>
 </main>
 
-<style>
+<style lang="scss">
+	$font-color: rgb(231, 231, 231);
+    $grey-dark: #1a1a1a;
+    $grey-dark-hover: #2b2b2b;
+	$grey-med: #333;
+    $medium-grey-bright: rgb(97, 97, 97);
+    $yellow-slicers: #ffce00;
+    $grey-black-alt: #292929;
+    $warning-red: #e24a4a;
+
 	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+		width: 100%;
+		height: 100%;
+		color: $font-color;
+		background-color: $grey-dark;
 	}
 </style>

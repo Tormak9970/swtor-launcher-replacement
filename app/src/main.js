@@ -1,10 +1,8 @@
-const { app, BrowserWindow, dialog, ipcMain, screen } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const child_process = require('child_process');
 
-if (handleSquirrelEvent()) {
-  return;
-}
+if (handleSquirrelEvent())  return;
 
 const devBuild = true;
 process.env.ELECTRON_ENABLE_LOGGING = devBuild;
@@ -17,7 +15,6 @@ require('electron-reload')(__dirname, {
 app.on("ready", () => {
   app.setAppUserModelId('com.tormak.swtor-launcher-replacement');
   initMain();
-  initGlobalListeners();
   
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) initMain();
@@ -33,35 +30,41 @@ app.on("window-all-closed", () => {
 function initMain() {
   const mainWindow = new BrowserWindow({
     height: 600,
+    width: 800,
+    frame: false,
+    show: false,
     webPreferences: {
+      nodeIntegration: false,
+      contextIsolation: true,
+      enableRemoteModule: false,
       preload: path.join(__dirname, "preload.js"),
     },
-    width: 800,
   });
 
-  // and load the index.html of the app.
+  mainWindow.on('ready-to-show', () => mainWindow.show());
+  mainWindow.removeMenu();
+
+  // Load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "../public/index.html"));
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+  initMainListeners(mainWindow);
 }
-
+/**
+ * @param  {BrowserWindow} window window to apply the listeners to.
+ */
 function initMainListeners(window) {
-
-}
-
-function initGlobalListeners() {
-  ipcMain.on('close', (event, data) => {
-
-  });
-  ipcMain.on('minimize', (event, data) => {
-
-  });
-  ipcMain.on('maximize', (event, data) => {
-
-  });
-  ipcMain.on('restore', (event, data) => {
-
+  ipcMain.on('window', (event, data) => {
+    if (data[0] === 'close') {
+      app.quit();
+    } else if (data[0] === 'minimize') {
+      window.minimize();
+    } else if (data[0] === 'maximize') {
+      window.maximize();
+    } else if (data[0] === 'restore') {
+      window.restore();
+    }
   });
 }
 

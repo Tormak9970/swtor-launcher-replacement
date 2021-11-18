@@ -25,9 +25,9 @@ async function copyResourcesRecursive(originalDir, targetDir) {
 module.exports = {
     "packagerConfig": {
         "productName": "SWTOR EMU",
-        "icon": "src/img/EMU.ico",
+        "icon": "public/EMU.ico",
         "extraResource": [
-            "src/img/EMU.ico"
+            "public/EMU.ico"
         ]
     },
     "hooks": {
@@ -39,9 +39,9 @@ module.exports = {
         {
             "name": "@electron-forge/maker-squirrel",
             "config": {
-                "loadingGif": "src/gif/LoadingAnimation.gif",
-                "iconUrl": "https://cdn.jsdelivr.net/gh/Tormak9970/swtor-launcher-replacement/EMU.ico",
-                "setupIcon": "src/img/EMU.ico"
+                "loadingGif": "public/assets/gif/LoadingAnimation.gif",
+                "iconUrl": "https://cdn.jsdelivr.net/gh/Tormak9970/swtor-launcher-replacement/app/public/EMU.ico",
+                "setupIcon": "public/EMU.ico"
             }
         },
         {
