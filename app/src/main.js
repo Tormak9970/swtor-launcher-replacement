@@ -1,13 +1,18 @@
-import { app, BrowserWindow, dialog, ipcMain, screen } from "electron";
-import * as path from "path";
-import {spawn as childSpawn} from'child_process';
+const { app, BrowserWindow, dialog, ipcMain, screen } = require("electron");
+const path = require("path");
+const child_process = require('child_process');
 
-// if (handleSquirrelEvent()) {
-//   return;
-// }
+if (handleSquirrelEvent()) {
+  return;
+}
 
 const devBuild = true;
-// process.env.ELECTRON_ENABLE_LOGGING = devBuild;
+process.env.ELECTRON_ENABLE_LOGGING = devBuild;
+
+require('electron-reload')(__dirname, {
+  electron: path.join(__dirname, '../node_modules', '.bin', 'electron'),
+  awaitWriteFinish: true,
+});
 
 app.on("ready", () => {
   app.setAppUserModelId('com.tormak.swtor-launcher-replacement');
@@ -35,18 +40,29 @@ function initMain() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, "./components/index.html"));
+  mainWindow.loadFile(path.join(__dirname, "../public/index.html"));
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 }
 
-function initMainListeners(window: BrowserWindow) {
+function initMainListeners(window) {
 
 }
 
 function initGlobalListeners() {
+  ipcMain.on('close', (event, data) => {
 
+  });
+  ipcMain.on('minimize', (event, data) => {
+
+  });
+  ipcMain.on('maximize', (event, data) => {
+
+  });
+  ipcMain.on('restore', (event, data) => {
+
+  });
 }
 
 
@@ -61,17 +77,17 @@ function handleSquirrelEvent() {
   const updateDotExe = path.resolve(path.join(rootAtomFolder, 'Update.exe'));
   const exeName = path.basename(process.execPath);
 
-  const spawn = function(command:string, args:any) {
+  const spawn = function(command, args) {
     let spawnedProcess, error;
 
     try {
-      spawnedProcess = childSpawn(command, args, {detached: true});
+      spawnedProcess = child_process.spawn(command, args, {detached: true});
     } catch (error) {}
 
     return spawnedProcess;
   };
 
-  const spawnUpdate = function(args:any) {
+  const spawnUpdate = function(args) {
     return spawn(updateDotExe, args);
   };
 

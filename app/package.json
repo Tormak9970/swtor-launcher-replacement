@@ -1,18 +1,17 @@
 {
   "name": "swtor-launcher-replacement",
   "version": "1.0.0",
-  "type": "module",
+  "main": "./src/main.js",
   "description": "An extendible launcher replacement for Star Wars The Old Republic",
   "scripts": {
     "start": "concurrently \"npm:svelte-dev\" \"electron-forge start\"",
-    "build": "concurrently \"npm:svelte-build\" \"tsc\"",
-    "watch": "tsc -w",
-    "lint": "eslint -c .eslintrc --ext .ts ./src",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "svelte-dev": "vite",
-    "svelte-build": "vite build",
-    "svelte-check": "svelte-check --tsconfig ./tsconfig.json"
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "svelte-build": "rollup -c",
+    "svelte-dev": "rollup -c -w",
+    "svelte-start": "sirv public"
   },
   "repository": "https://github.com/Tormak9970/swtor-launcher-replacement",
   "keywords": [
@@ -29,25 +28,23 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.61",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
     "@electron-forge/maker-zip": "^6.0.0-beta.61",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
-    "@tsconfig/svelte": "^2.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
     "electron": "^16.0.0",
-    "eslint": "^7.32.0",
-    "svelte": "^3.37.0",
-    "svelte-check": "^2.1.0",
-    "svelte-preprocess": "^4.7.2",
-    "tslib": "^2.2.0",
-    "typescript": "^4.4.4",
-    "vite": "^2.6.4"
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0"
   },
   "dependencies": {
     "concurrently": "^6.4.0",
     "electron-reload": "^2.0.0-alpha.1",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "sirv-cli": "^1.0.0"
   },
   "config": {
-    "forge": "./config.cjs"
+    "forge": "./config.js"
   }
 }
