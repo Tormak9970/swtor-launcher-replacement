@@ -13,7 +13,7 @@ require('electron-reload')(__dirname, {
 });
 
 app.on("ready", () => {
-  app.setAppUserModelId('com.tormak.swtor-launcher-replacement');
+  app.setAppUserModelId('dev.tormak.swtor-launcher-replacement');
   initMain();
   
   app.on('activate', function () {
@@ -29,8 +29,8 @@ app.on("window-all-closed", () => {
 
 function initMain() {
   const mainWindow = new BrowserWindow({
-    height: 600,
-    width: 800,
+    width: 716,
+    height: 545,
     frame: false,
     show: false,
     webPreferences: {
@@ -39,6 +39,7 @@ function initMain() {
       enableRemoteModule: false,
       preload: path.join(__dirname, "preload.js"),
     },
+    icon: path.join(__dirname, "../public/EMU.ico"),
   });
 
   mainWindow.on('ready-to-show', () => mainWindow.show());

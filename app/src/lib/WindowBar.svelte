@@ -14,7 +14,7 @@
 <div id="windowBar">
     <div class="window-header">
         <!-- svelte-ignore a11y-missing-attribute -->
-        <img src="./asset/img/EMU.png" height="15" class="window-img"/>
+        <img src="./assets/img/EMU_title.png" height="15" class="window-img"/>
         <div class="window-name">{title}</div>
         <div class="window-btns-wrapper">
             <div class="title-btn{minimize ? ' title-btn-disabled' : ''}" on:click="{minWin}">

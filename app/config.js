@@ -40,7 +40,7 @@ module.exports = {
             "name": "@electron-forge/maker-squirrel",
             "config": {
                 "loadingGif": "public/assets/gif/LoadingAnimation.gif",
-                "iconUrl": "https://cdn.jsdelivr.net/gh/Tormak9970/swtor-launcher-replacement/app/public/EMU.ico",
+                "iconUrl": "https://cdn.jsdelivr.net/gh/Tormak9970/swtor-launcher-replacement@fe7d76b0913289d6298411c9ba9d2338a6397c78/app/public/EMU.ico",
                 "setupIcon": "public/EMU.ico"
             }
         },
