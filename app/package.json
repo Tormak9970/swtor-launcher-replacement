@@ -28,9 +28,10 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.61",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
     "@electron-forge/maker-zip": "^6.0.0-beta.61",
-    "electron": "^16.0.0",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "as-toast": "^1.0.0",
+    "electron": "^16.0.0",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
@@ -45,7 +46,8 @@
     "electron-squirrel-startup": "^1.0.0",
     "sass": "^1.41.0",
     "sirv-cli": "^1.0.0",
-    "svelte-preprocess": "^4.9.8"
+    "svelte-preprocess": "^4.9.8",
+    "typescript": "^4.5.2"
   },
   "config": {
     "forge": "./config.js"

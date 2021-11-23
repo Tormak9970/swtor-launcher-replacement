@@ -1,13 +1,20 @@
-@font-face {
-    font-family: Eurofont;
-    src: url("./assets/fonts/Hayward-SmBd.eot");
-    src: url("./assets/fonts/Hayward-SmBd.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/Hayward-SmBd.woff2") format("woff2"), url("./assets/fonts/Hayward-SmBd.woff") format("woff"), url("./assets/fonts/Hayward-SmBd.ttf") format("truetype");
-    font-weight: normal;
-}
+@font-face { font-weight: 400; font-family: 'Berling'; src:  url('fonts/berling-regular-webfont.woff') format('woff'), url('fonts/berling-regular-webfont.ttf') format('truetype'); }
+@font-face { font-weight: 400; font-style: italic; font-family: 'Berling'; src: url('fonts/berling-regita-webfont.woff') format('woff'), url('fonts/berling-regita-webfont.ttf') format('truetype'); }
+@font-face { font-weight: 700; font-family: 'Berling'; src: url('fonts/berling-bold-webfont.woff') format('woff'), url('fonts/berling-bold-webfont.ttf') format('truetype'); }
+@font-face { font-weight: 700; font-style: italic; font-family: 'Berling'; src: url('fonts/berling-boldita-webfont.woff') format('woff'), url('fonts/berling-boldita-webfont.ttf') format('truetype'); }
+@font-face { font-family: 'Open Sans'; font-style: normal; font-weight: 400; src: url('fonts/OpenSans-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Open Sans'; font-style: normal; font-weight: 600; src: url('fonts/OpenSans-Semibold.ttf') format('truetype'); }
+@font-face { font-family: 'Open Sans'; font-style: normal; font-weight: 700; src: url('fonts/OpenSans-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'Open Sans'; font-style: italic; font-weight: 400; src: url('fonts/OpenSans-Italic.ttf') format('truetype'); }
+@font-face { font-family: 'Open Sans'; font-style: italic; font-weight: 600; src: url('fonts/OpenSans-SemiboldItalic.ttf') format('truetype'); }
+@font-face { font-weight: 400; font-family: 'News Gothic'; src: url('fonts/NewsGothic.woff') format('woff'), url('fonts/NewsGothic.ttf') format('truetype'); }
+@font-face { font-weight: 400; font-style: italic; font-family: 'News Gothic'; src: url('fonts/NewsGothic-Italic.woff') format('woff'), url('fonts/NewsGothic-Italic.ttf') format('truetype'); }
+@font-face { font-weight: 700; font-family: 'News Gothic'; src: url('fonts/NewsGothic-Bold.woff') format('woff'), url('fonts/NewsGothic-Bold.ttf') format('truetype'); }
+@font-face { font-weight: 700; font-style: italic; font-family: 'News Gothic'; src: url('fonts/NewsGothic-BoldItalic.woff') format('woff'), url('fonts/NewsGothic-BoldItalic.ttf') format('truetype'); }
 
 html, body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }

@@ -1,5 +1,12 @@
 <script>
 	import WindowBar from './lib/WindowBar.svelte';
+	import { Toasts, addToast } from "as-toast"
+
+	const retryInterval = 3600;
+	
+	function warn(msg) {
+		addToast(msg, 'warn');
+	}
 </script>
 
 <main>

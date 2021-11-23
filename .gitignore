@@ -1,2 +1,5 @@
 /app/node_modules
 /app/public/build
+/app/public/assets
+/app/src/external
+/app/src/model
